@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>RPA Weekly LTR Email</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 14px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: #2D5699;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .pass { color: #28a745; }
+        .warn { color: #ffc107; }
+        .fail { color: #dc3545; }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .metric-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+
+        .trend-view {
+            margin: 2rem 0;
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .trend-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .trend-table th {
+            background: #2D5699;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .trend-table td {
+            padding: 12px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-left: 8px;
+        }
+
+        .status-inprogress {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-complete {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-blocked {
+            background: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <h1>RPA Weekly LTR Email – Week {week}, {year}</h1>
+
+    <div class="section">
+        <h2>What I Need From You</h2>
+        <ul>
+            {what_i_need_items}
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Key Updates</h2>
+        <ul>
+            {key_updates}
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Exec LTR View</h2>
+        <div class="metrics-grid">
+            {exec_metrics}
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Roadmap & Next Step Updates</h2>
+        {roadmap_updates}
+    </div>
+
+    <div class="section">
+        <h2>Detail Notes</h2>
+        {detail_notes}
+    </div>
+
+    <div class="section">
+        <h2>Detail LTR</h2>
+        {detail_ltr}
+    </div>
+
+    <div class="section">
+        <h2>Deep Dives/Top5 Review</h2>
+        {deep_dives}
+    </div>
+
+    <div class="section">
+        <h2>Files</h2>
+        {files}
+    </div>
+
+    <div class="trend-view">
+        <h2>Performance Trends</h2>
+        <div class="trend-data">
+            {performance_trends}
+        </div>
+    </div>
+</body>
+</html> 

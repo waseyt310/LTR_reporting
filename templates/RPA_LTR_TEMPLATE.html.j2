@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Business Review - Week {{ week }} {{ year }}</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 15px;
+            line-height: 1.4;
+            font-size: 14px;
+        }
+        h1, h2, h3 {
+            color: #00BFA5; /* Spreetail Teal as primary color */
+            margin: 15px 0 10px 0;
+            line-height: 1.2;
+        }
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 20px;
+            border-bottom: 2px solid #00BFA5; /* Spreetail Teal */
+            padding-bottom: 5px;
+        }
+        h3 {
+            font-size: 16px;
+            margin-top: 15px;
+        }
+        .section-content {
+            margin-left: 15px;
+            margin-bottom: 20px; /* Reduced from 40px or greater */
+        }
+        .kpi {
+            font-family: Consolas, monospace;
+            margin: 3px 0;
+            font-size: 13px;
+        }
+        .success, .pass, .metric-good {
+            color: #008C15; /* Spreetail Green */
+        }
+        .warning, .warn, .metric-warning {
+            color: #1E40AF; /* Spreetail Blue */
+        }
+        .danger, .fail, .metric-critical {
+            color: #C70000; /* Red for critical */
+        }
+        .main-kpi-image {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border: 1px solid #A9B5B8; /* Spreetail Grey */
+        }
+        .project-item {
+            margin-bottom: 10px;
+        }
+        .project-item strong {
+            color: #00BFA5; /* Spreetail Teal */
+        }
+        .project-details {
+            margin-left: 10px;
+            margin-top: 3px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #1E40AF; /* Spreetail Blue */
+        }
+        .category-header {
+            background-color: #00BFA5; /* Spreetail Teal */
+            color: white;
+            padding: 8px 15px;
+            margin: 20px 0 15px 0;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .subcategory {
+            border-left: 3px solid #2D5699;
+            padding-left: 12px;
+            margin: 15px 0;
+        }
+        .metric-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .metric-card {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 10px;
+        }
+        .metric-title {
+            font-weight: bold;
+            color: #2D5699;
+            margin-bottom: 5px;
+        }
+        .grid-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        /* Executive Summary Styles */
+        .executive-metrics {
+            margin: 20px 0;
+        }
+        
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .metric-item {
+            flex: 1;
+            min-width: 200px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            text-align: center;
+        }
+        
+        .metric-label {
+            display: block;
+            font-weight: bold;
+            color: #2D5699;
+            margin-bottom: 5px;
+        }
+        
+        .metric-value {
+            display: block;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .metric-target {
+            display: block;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+        .table th, .table td {
+            padding: 8px;
+            border: 1px solid #A9B5B8; /* Spreetail Grey */
+            text-align: left;
+        }
+        .table th {
+            background-color: #1E40AF; /* Spreetail Blue */
+            color: white;
+            font-weight: bold;
+        }
+        .table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .item-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .item-list li {
+            padding: 10px 12px;
+            border-left: 3px solid #00BFA5; /* Spreetail Teal */
+            background-color: #f8f9fa;
+            margin-bottom: 8px;
+            border-radius: 0 3px 3px 0;
+        }
+        
+        /* Trend View Styles */
+        .trend-view {
+            margin: 2rem 0;
+            background: white;
+            border: 1px solid #A9B5B8; /* Spreetail Grey */
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .trend-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        .trend-table th {
+            background: #1E40AF; /* Spreetail Blue */
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        .trend-table td {
+            padding: 12px;
+            border-bottom: 1px solid #A9B5B8; /* Spreetail Grey */
+        }
+        
+        pre {
+            font-family: Consolas, monospace;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 12px;
+            border: 1px solid #dee2e6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weekly Business Review - Week {{ week }} {{ year }}</h1>
+    <p style="text-align:center; color:#666;">{{ date }}</p>
+
+    <!-- Executive Summary Section -->
+    <h2>Executive Summary</h2>
+    <div class="section-content">
+        {{ executive_summary | safe }}
+        
+        <div class="executive-metrics">
+            <div class="metric-row">
+                {{ exec_metrics | safe }}
+            </div>
+        </div>
+    </div>
+
+    <!-- Main KPI Screenshot -->
+    <h2>KPI Dashboard</h2>
+    <div class="section-content">
+        {{ main_kpi_screenshot | safe }}
+    </div>
+
+    <!-- Exec LTR View -->
+    <h2>Exec LTR View</h2>
+    <div class="section-content">
+        <h3>Metrics Validation</h3>
+        {{ metrics_validation | safe }}
+        
+        <h3>KPI Alignment</h3>
+        {{ kpi_alignment | safe }}
+        
+        <h3>Performance Score</h3>
+        {{ performance_score | safe }}
+    </div>
+
+    <!-- Roadmap & Next Step Updates -->
+    <h2>Roadmap & Next Step Updates</h2>
+    <div class="section-content">
+        {{ retired_automations | safe }}
+        
+        <div class="category-header">Current Projects</div>
+        {% for item in roadmap_items %}
+        <div class="project-item">
+            <strong>{{ item.name }}</strong> - {{ item.status }}
+            <div class="project-details">
+                <span class="highlight">Owner:</span> {{ item.owner }} | 
+                <span class="highlight">ETA:</span> {{ item.eta }}
+                <ul>
+                    {% for detail in item.details %}
+                    <li>{{ detail }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+        
+        {% if roadmap_updates %}
+        <div class="category-header">Additional Updates</div>
+        <ul>
+            {% for update in roadmap_updates %}
+            <li>{{ update }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    
+    <!-- Performance Trends -->
+    <h2>Performance Trends</h2>
+    <div class="section-content">
+        <div class="trend-view">
+            {{ performance_trends | safe }}
+        </div>
+        {{ metrics_validation_detail | safe }}
+    </div>
+
+    <h2>Detail Notes</h2>
+    <div class="section-content">
+        <pre>{{ detail_notes }}</pre>
+    </div>
+
+    <h2>Detail LTR</h2>
+    <div class="section-content">
+        <pre>{{ detail_ltr }}</pre>
+    </div>
+
+    <h2>Deep Dives / Top 3 Review</h2>
+    <div class="section-content">
+        <pre>{{ deep_dives }}</pre>
+    </div>
+
+    <h2>Files</h2>
+    <div class="section-content">
+        <pre>{{ files }}</pre>
+    </div>
+</body>
+</html> 

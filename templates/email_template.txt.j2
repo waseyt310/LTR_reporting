@@ -1,0 +1,30 @@
+Weekly Business Review - Week {{ week }}, {{ year }}
+===============================
+
+{% if bluf and bluf.summary %}
+BLUF:
+{{ bluf.summary }}
+{% endif %}
+
+{% if kpi_image_note %}
+{{ kpi_image_note }}
+{% endif %}
+
+{% if key_updates and key_updates.updates %}
+KEY UPDATES:
+{% for update in key_updates.updates %}
+- {{ update }}
+{% endfor %}
+{% endif %}
+
+{% if project_status and project_status.projects %}
+PROJECT STATUS:
+{% for project in project_status.projects %}
+* {{ project.name }} - {{ project.status }} ({{ project.progress }}% complete)
+{% if project.is_at_risk %}  AT RISK!{% endif %}
+{% if project.blockers %}  Blockers: {{ project.blockers|join(', ') }}{% endif %}
+{% if project.wbr_update %}  Update: {{ project.wbr_update }}{% endif %}
+{% endfor %}
+{% endif %}
+
+Generated on: {{ timestamp }} 

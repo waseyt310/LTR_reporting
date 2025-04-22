@@ -1,0 +1,59 @@
+Definition														
+	An LTR report is a reporting phrase at Spreetail. It stands for Left-to-Right reports. Typically, it is built by week, but it can also be built by month													
+		An LTR reports on the UDEs + processes produces UDEs against the goal												
+		An LTR report is a standard and consistent way for Spreetail team members to understand a specific business unit												
+Building an LTR report														
+	An LTR should follow the below framework													
+		What goes in it												
+			Every single UDE gets a line item on the LTR. The UDE should have the count of activities and work its way to the $ impact to the business (increase revenue, decrease cost, reduce risk)											
+		How should it get structured - each LTR follows the below structure												
+			Structure - The LTR should be for the T6W or T6M in the below format											
+			Line Item Description - The title for the line item											
+			Defintion - The definition of the line item so anyone can understand it											
+			Owner - The business owner, ideally Sr. Dir+, who is the Single responsible party for that line item. You can also choose to add an Exec owner											
+			Goal - The idea number for that line item											
+				Not all line items need a goal. Some line items are there for context (in which case, there is no owner)										
+				If a line item is an SLA%, then the goal should be either 95% or 98% (we want an "A" or an "A+")										
+					SLA% goals are using the easiest to start with									
+			Conditional Formating - The LTR should highlight cells that are either 10% above goal in green or 10% below goal in red											
+														
+Emailing an LTR Report														
+	1. What I need from you: @ parties if you need direct action from someone. Otherwise, put nothing if no longer asked for feedback (nothing needed this week from the group)													
+	2. Key Updates (Releases, Learnings, Insights): Highlight a MAXIMUM of 3 things. Focus on either releases/learnings over the prior week or key insights from the preceding week. Include $ impact where applicable													
+	3. Exec LTR view: Show the Exec LTR view (this is the simplified view of the “key metrics)													
+			a.Include conditional formatting on the LTR. Following the prescription, “green is favorable, red is unfavorable)													
+	4. Roadmap & Next Step Updates (optional): Mention up to 3 roadmap items that are UP NEXT. Provide Date Clarity & Impact													
+			a.(mention when the roadmap item should be released, what LTR line item it impacts, and the magnitude of the impact – hopefully, the magnitude is roughly known since we’re doing the work 😊 don’t spend material time here)													
+	5. Detail Notes: Provide any detailed notes to support anything that is not top3													
+	6. Detail LTR: Link the specific detailed LTRs that roll up to the main Exec LTR (title them differently if needed)													
+	7. Deep Dives/Top5 review (optional): If applicable, include the top5 deep dives from the prior week and call out the main learnings													
+	8. Files: Link all applicable files --- LTR data, roadmap file, deep dive daily tracker file (showing smaller non-roadmap items found from deep dives), operations playbook (if applicable)													
+			a. Link as the file name													
+
+
+What not to do														
+	I won't put a Spreetail example here because it is insulting to someone (over time, I will find one of my examples before I was educated by someone else). However, it would look something like the below													
+														
+	Assume a gas company													
+														
+	Title													
+	Gas Sales		$96,919 	$62,402 	$70,209 	$74,031 	$68,210 	$68,269 	$64,726 					
+	Gas Barrels		97	62	70	74	68	68	65					
+	# of employees		95	96	91	95	91	97	90					
+	Sales/employee		$1,020 	$650 	$772 	$779 	$750 	$704 	$719 					
+														
+	Issues													
+		I may not understand the line item without a defintion												
+		I have no idea what the goal is												
+			It is  weather reporting (today is 90 degrees…there is no "so what" factor)											
+		I have no idea who owns the goal												
+		There is no formatting, so even if there was a goal, I have to read everything to understand if I should care												
+														
+FAQ														
+	I'm spending 5+ hours  producing LTRs on Monday. Is this section necessary?													
+		Reporting out on the system is critical. The likely event is your system/tracking is overly manual (you need to automate record keeping or reporting)												
+	What if I don't have data for all the UDEs? Do I still put it on the LTR?													
+		No problem. Build the framework of the LTR and work to get the data overtime. You still want to capture the UDE, and writing it down with be a forcing function for you to figure out how to address it												
+	There is a lot of data. I thought we were keeping things simple?													
+		Operators need to know everything going on inside their business and track it.												
+		They should create Exec portions of the LTR to simply it, and show their sophistication and mastery over an area, to be shared outside their department												

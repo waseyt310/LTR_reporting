@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Business Review - Week {{ week }} {{ year }}</title>
+  <style>{{ css_block }}</style>
+</head>
+<body>
+  <!-- =================== HEADER / HERO =================== -->
+  <header class="hero">
+     <h1>RPA Weekly	LTR – Week	{{ week }}	/	{{ year }}</h1>
+     <p class="date‑stamp">Generated	{{ generation_date }}</p>
+
+     {% if kpi_base64_src %}
+       <figure class="kpi‑hero">
+         <img src="data:image/png;base64,{{ kpi_base64_src }}" alt="Main KPI dashboard" />
+         <figcaption>Main KPI dashboard</figcaption>
+       </figure>
+     {% else %}
+       <p class="muted">KPI dashboard image not available.</p>
+     {% endif %}
+  </header>
+
+  <!-- =================== METRICS CARDS =================== -->
+  <section>
+     <h2>Key	Metrics</h2>
+     {{ metrics_cards_html |	safe }}
+  </section>
+
+  <!-- =================== DATA VALIDATION ================= -->
+  <section>
+     <h2>Data	Validation</h2>
+     {{ validation_html |	safe }}
+  </section>
+
+  <!-- =================== ROADMAP ========================= -->
+  <section>
+     <h2>Project	Status &amp; Roadmap</h2>
+     {{ roadmap_table_html |	safe }}
+  </section>
+
+  <!-- =================== DAILY TIMELINE ================== -->
+  <section>
+     <h2>Timeline</h2>
+     {{ timeline_html |	safe }}
+  </section>
+
+  <!-- =================== INSIGHTS / WHAT	I	NEED ========== -->
+  <section>
+     <h2>Insights &amp; Analysis</h2>
+     {{ insights_html |	safe }}
+  </section>
+
+  <section>
+     <h2>What	I	Need</h2>
+     {{ what_i_need_block |	safe }}
+  </section>
+
+  <!-- =================== AUDIT FOOTER ==================== -->
+  <footer class="audit‑footer">
+     <p>Automated audit score: <strong>{{ audit_score }}/100</strong></p>
+  </footer>
+</body>
+</html> 

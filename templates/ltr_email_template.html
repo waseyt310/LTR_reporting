@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>{{ css_block|safe }}</style>
+</head>
+<body>
+  <div class="container">
+
+    <h1>Weekly Business Review – Week {{ week }}</h1>
+
+    {{ what_i_need_block|safe }}
+
+    <h2><span>📊</span> Key KPI Snapshot</h2>
+    <div class="card" style="text-align:center">
+      <img src="data:image/png;base64,{{ kpi_base64_src }}" alt="KPI" style="max-width:100%;border:1px solid var(--border);border-radius:4px">
+    </div>
+
+    <h2><span>📈</span> Executive Metrics</h2>
+    {{ metrics_cards_html|safe }}
+
+    <h2><span>🗺️</span> Roadmap</h2>
+    {{ roadmap_table_html|safe }}
+
+    <h2><span>🗓️</span> Daily Stand‑ups</h2>
+    {{ timeline_html|safe }}
+
+    <h2><span>📝</span> Detailed Insights</h2>
+    {{ insights_html|safe }}
+
+    <h2><span>🔍</span> Data Validation</h2>
+    {{ validation_html|safe }}
+
+    <h2><span>📋</span> Audit Quality Score</h2>
+    <div class="card">
+      <div class="audit-bar">
+        <div style="width:{{ audit_score }}%;background:{% if audit_score>=85 %}var(--success){% elif audit_score>=70 %}var(--warning){% else %}var(--danger){% endif %};"></div>
+      </div>
+      <p style="margin:6px 0 0;font-weight:bold">{{ audit_score }}/100</p>
+    </div>
+
+    <div class="footer">
+      Generated {{ generation_date }} • RPA Analytics Automation
+    </div>
+  </div>
+</body>
+</html> 

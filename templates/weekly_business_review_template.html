@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Weekly Business Review</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 14px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: #2D5699;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+
+        .date-display {
+            font-size: 1.1em;
+            color: #666;
+            margin-top: 0.5em;
+        }
+
+        .emoji-header {
+            margin-right: 10px;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .metric-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+
+        .metric-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .metric-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2D5699;
+        }
+
+        .metric-change {
+            font-size: 0.9em;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .positive-change { color: #28a745; }
+        .negative-change { color: #dc3545; }
+        .neutral-change { color: #6c757d; }
+
+        .exec-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .exec-metric-card {
+            flex: 1;
+            min-width: 200px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            text-align: center;
+        }
+
+        .exec-metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #2D5699;
+            margin: 10px 0;
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 300px;
+            margin: 1.5rem 0;
+            background: #f8f9fa;
+            border: 1px dashed #dee2e6;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+        }
+
+        .roadmap-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .roadmap-table th {
+            background: #2D5699;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .roadmap-table td {
+            padding: 12px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-left: 8px;
+        }
+
+        .status-inprogress {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-complete {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-blocked {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        @media (max-width: 768px) {
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .exec-metrics {
+                flex-direction: column;
+            }
+            
+            .exec-metric-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>Weekly Business Review – Week {{week_number}}</h1>
+        <div class="date-display">{{current_date}}</div>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji-header">📊</span>Key KPI Snapshot</h2>
+        <div class="chart-container">
+            {{dashboard_chart}}
+        </div>
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-title">Total Revenue</div>
+                <div class="metric-value">{{revenue_value}}</div>
+                <span class="metric-change {{revenue_change_class}}">{{revenue_change}}</span>
+            </div>
+            <div class="metric-card">
+                <div class="metric-title">New Customers</div>
+                <div class="metric-value">{{new_customers_value}}</div>
+                <span class="metric-change {{new_customers_change_class}}">{{new_customers_change}}</span>
+            </div>
+            <div class="metric-card">
+                <div class="metric-title">Conversion Rate</div>
+                <div class="metric-value">{{conversion_rate_value}}</div>
+                <span class="metric-change {{conversion_rate_change_class}}">{{conversion_rate_change}}</span>
+            </div>
+            <div class="metric-card">
+                <div class="metric-title">Average Order Value</div>
+                <div class="metric-value">{{aov_value}}</div>
+                <span class="metric-change {{aov_change_class}}">{{aov_change}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji-header">📈</span>Executive Metrics</h2>
+        <div class="exec-metrics">
+            <div class="exec-metric-card">
+                <div class="metric-title">Customer Satisfaction</div>
+                <div class="exec-metric-value">{{csat_value}}</div>
+                <span class="metric-change {{csat_change_class}}">{{csat_change}}</span>
+            </div>
+            <div class="exec-metric-card">
+                <div class="metric-title">Market Share</div>
+                <div class="exec-metric-value">{{market_share_value}}</div>
+                <span class="metric-change {{market_share_change_class}}">{{market_share_change}}</span>
+            </div>
+            <div class="exec-metric-card">
+                <div class="metric-title">Operational Efficiency</div>
+                <div class="exec-metric-value">{{efficiency_value}}</div>
+                <span class="metric-change {{efficiency_change_class}}">{{efficiency_change}}</span>
+            </div>
+        </div>
+        <div class="chart-container">
+            {{executive_dashboard_chart}}
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji-header">🗺️</span>Roadmap</h2>
+        <table class="roadmap-table">
+            <thead>
+                <tr>
+                    <th>Project</th>
+                    <th>Owner</th>
+                    <th>Timeline</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#roadmap_items}}
+                <tr>
+                    <td>{{project_name}}</td>
+                    <td>{{project_owner}}</td>
+                    <td>{{project_timeline}}</td>
+                    <td>
+                        {{project_status}}
+                        <span class="project-status status-{{status_class}}">{{status_text}}</span>
+                    </td>
+                </tr>
+                {{/roadmap_items}}
+            </tbody>
+        </table>
+        
+        <div class="section">
+            <h3>Key Initiatives</h3>
+            <ul>
+                {{#key_initiatives}}
+                <li>{{initiative_text}}</li>
+                {{/key_initiatives}}
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>Blockers & Risks</h3>
+            <ul>
+                {{#blockers}}
+                <li>{{blocker_text}}</li>
+                {{/blockers}}
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Action Items</h2>
+        <ul>
+            {{#action_items}}
+            <li>{{action_text}} <strong>Owner:</strong> {{action_owner}}, <strong>Due:</strong> {{action_due}}</li>
+            {{/action_items}}
+        </ul>
+    </div>
+
+    <div class="section" style="text-align: center; font-size: 0.9em; color: #6c757d; padding: 10px;">
+        <p>Generated on {{generation_timestamp}}</p>
+        <p>Questions? Contact {{contact_email}}</p>
+    </div>
+</body>
+</html>
+

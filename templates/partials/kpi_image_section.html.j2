@@ -1,0 +1,29 @@
+{% if kpi_image %}
+<div class="kpi-dashboard">
+    <h2>Key Performance Indicators</h2>
+    <div class="kpi-container" style="text-align: center; margin: 20px 0;">
+        <img src="data:image/png;base64,{{ kpi_image }}" alt="KPI Dashboard" 
+             class="main-kpi-image" style="max-width: 100%; box-shadow: 0 3px 6px rgba(0,0,0,0.16); 
+             border: 1px solid #A9B5B8; border-radius: 6px;">
+    </div>
+    <div class="kpi-caption" style="margin: 8px 0 15px 0; padding: 12px; background-color: #f0f9f8; 
+            border-left: 4px solid #00BFA5; border-radius: 0 4px 4px 0;">
+        <div style="font-weight: bold; color: #00BFA5; margin-bottom: 6px; font-size: 15px;">
+            Performance Dashboard: Week {{ week }} {{ year }}
+        </div>
+        <div style="color: #555; margin-bottom: 6px;">
+            This dashboard provides an overview of key operational metrics for the week, including automation 
+            success rates, impact values, and utilization statistics.
+        </div>
+    </div>
+</div>
+{% elif kpi_image_error or kpi_image_placeholder_text %}
+<div class="kpi-dashboard">
+    <h2>Key Performance Indicators</h2>
+    <div class="kpi-error" style="padding: 20px; margin: 15px 0; text-align: center; 
+            border: 2px dashed #1E40AF; background-color: #f0f4ff; border-radius: 6px;">
+        <h3 style="color: #1E40AF; margin-top: 0;">KPI Dashboard Image Not Available</h3>
+        <p style="margin-bottom: 10px;">{{ kpi_image_placeholder_text|default(kpi_image_error, true) }}</p>
+    </div>
+</div>
+{% endif %} 

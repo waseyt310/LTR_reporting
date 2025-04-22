@@ -1,0 +1,39 @@
+What I need from you:
+• @ parties if you need direct action from someone.
+• Otherwise, leave this section blank if no feedback is required this week.
+
+Key Updates (Releases, Learnings, Insights):
+• Highlight up to 3 key items (from last week’s releases or big insights).
+• Include $ impact where applicable.
+• Incorporate RPA‐specific updates (e.g., new bot deployments, script improvements) and note time or cost savings.
+
+("WeekXX_MainKPI.png") - Add Main KPI Screenshot Here
+(Note: This screenshot should showcase high‐level or summary metrics distinct from those below.)
+
+Exec LTR View:
+• Display a different set of “key metrics” or additional details, so it’s not duplicating the KPI screenshot.
+• Use green for favorable metrics, red for unfavorable (conditional formatting).
+• Include RPA metrics (bot uptime, automation success rates, processing times, error rates, etc.).
+
+Roadmap & Next Step Updates (reference WBR Notes & JIRA CSV Data):
+• Leverage insights from WBR notes/chat and JIRA data to detail upcoming tasks.
+• For each person (Edu, Asim, Waseyt, and Donn), include 2 roadmap items.
+• For each item, note:
+  o Due date (JIRA data)
+  o The Business SME or stakeholder
+  o The expected weekly ROI
+• Where applicable, mention upcoming RPA initiatives (e.g., scaling new automation features or further bot enhancements).
+
+Detail Notes:
+• Provide any supporting notes that didn’t make the top 3 Key Updates.
+
+Detail LTR:
+• Link or reference any detailed LTRs that roll up into the main Exec LTR.
+
+Deep Dives / Top 3 Review (optional):
+• Include your top 3 deep dives from last week (if applicable).
+• Call out main learnings from each deep dive.
+
+Files:
+• Link to the LTR PBI.
+• Include links to RPA‐specific files (dashboards, run logs, troubleshooting guides) by filename.

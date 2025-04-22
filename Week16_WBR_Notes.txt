@@ -1,0 +1,56 @@
+Week 16 Notes
+
+Meeting notes:
+Automating LTR Emails: 
+Ryan discussed the need to fully automate their LTR emails, mentioning that the emails should be able to generate similar level output with minimal hallucinations. Shawn expressed confidence in the team’s ability to achieve this.
+	Automation Requirements: Ryan emphasized the need for the LTR emails to be fully automated, capable of generating similar level output even with missing pieces, and minimizing hallucinations. He mentioned starting with WBR notes and then standups if WBR notes are unavailable.
+	Team Confidence: Shawn expressed confidence in the team's ability to achieve the automation goal, indicating that the team has the necessary skills and expertise to complete the task successfully.
+	Implementation Strategy: Ryan outlined the strategy for implementing the automation, starting with WBR notes and then moving to standups if WBR notes are not available. He emphasized the importance of generating a similar level of output with minimal hallucinations.
+Streamlit and Snowflake Integration: 
+Ryan explained the potential of using Streamlit apps within Snowflake for various functionalities, such as uploading and updating data in different tables. He emphasized the importance of this integration for users who may not have coding experience.
+	Integration Benefits: Ryan highlighted the benefits of integrating Streamlit apps within Snowflake, including the ability to upload and update data in different tables, which is particularly useful for users without coding experience.
+	Functionality Expansion: Ryan discussed the expanded functionality that Streamlit and Snowflake integration would bring, such as directly uploading data into the toolkit and updating different tables, enhancing user experience and efficiency.
+	User Accessibility: Ryan emphasized the importance of making these tools accessible to users who may not have coding experience, ensuring that they can still perform necessary tasks without needing to write code.
+Revlist and Streamlit Training: 
+Ryan and Shawn discussed the need for a training session on Revlist and Streamlit for the team. Shawn offered to walk the team through the process, and Ryan suggested adding the training to their one-on-one meetings.
+Power BI and SQL Integration: 
+Ryan and Waseyt discussed the challenges of connecting Power BI with SQL due to MFA issues. Waseyt confirmed that SQL can be called inside Cursor, and Ryan emphasized the importance of leveraging this capability for both internal and customer projects.
+Weekly Impact and Maintenance Tickets: 
+Ryan reviewed the weekly impact numbers and noted the absence of maintenance tickets. Mohammad confirmed that only one maintenance ticket was added for 15 minutes. Ryan emphasized the importance of recording all tasks and maintenance activities accurately.
+Safety Claims Issue: 
+Ryan and Waseyt discussed the current status of the safety claims issue. Waseyt mentioned that the issue occurs when the remote element is out of focus, and Edu is working on a solution. Ryan stressed the need to resolve this issue quickly to avoid falling behind.
+	Issue Description: Waseyt explained that the safety claims issue occurs when the remote element is out of focus, causing errors. Edu is currently working on a solution to address this problem.
+	Urgency of Resolution: Ryan stressed the importance of resolving the safety claims issue quickly to avoid falling behind in their work. He emphasized the need to ensure the system is running smoothly to maintain productivity.
+JIRA and Trino Integration: 
+Ryan and Shawn discussed the need to improve their JIRA setup by integrating it with Trino. They plan to update their documentation and explore the possibility of using Trino to streamline their project management and reporting processes.
+	Integration Plan: Ryan and Shawn discussed the plan to integrate JIRA with Trino to improve their project management and reporting processes. They emphasized the need to update their documentation to reflect these changes.
+	Benefits of Integration: Ryan highlighted the benefits of integrating JIRA with Trino, including better project tracking, streamlined reporting, and improved overall efficiency in managing tasks and projects.
+Chatbot Prototype and Future Enhancements: 
+Donn shared updates on the chatbot prototype, mentioning the need for further research to improve its functionality. Ryan emphasized the importance of having a chatbot that can handle project planning, documentation, and maintenance tasks efficiently.
+	Prototype Update: Donn provided an update on the chatbot prototype, indicating that further research is needed to enhance its functionality. He mentioned exploring options to make the chatbot more dynamic and user-friendly.
+	Future Enhancements: Ryan emphasized the importance of developing a chatbot that can efficiently handle project planning, documentation, and maintenance tasks. He discussed the potential for the chatbot to become an integral part of their workflow.
+FedEx Bot Issue: 
+Donn reported on the progress of fixing the FedEx bot issue related to shared folders and local files. He mentioned that the issue occurs intermittently and is working on identifying the root cause.
+Streamlit Dashboard Development: 
+Waseyt demonstrated the progress on the Streamlit dashboard, highlighting the integration of cloud and desktop flows. Ryan expressed excitement about the dashboard’s potential and discussed the need for live data integration to monitor bot status in real-time.
+	Dashboard Progress: Waseyt demonstrated the progress on the Streamlit dashboard, showcasing the integration of cloud and desktop flows. He highlighted the new features and improvements made to the dashboard.
+	Live Data Integration: Ryan discussed the need for live data integration to monitor bot status in real-time. He emphasized the importance of having up-to-date information to ensure efficient monitoring and management of bots.
+Bullseye V4 and V5 Development: 
+Mohammad provided updates on the completion of Bullseye V4 and the ongoing development of Bullseye V5. He also mentioned the need to address an enhancement related to writing back from Excel to SQL.
+	Version Updates: Mohammad provided updates on the completion of Bullseye V4 and the ongoing development of Bullseye V5. He mentioned that V4 is now running in production, and work on V5 is progressing.
+	Enhancement Needs: Mohammad mentioned the need to address an enhancement related to writing back from Excel to SQL, indicating that this task is part of the ongoing development efforts for Bullseye V5.
+Follow-up tasks:
+Replit Demonstration: 
+Schedule a Replit show and tell session for the team to demonstrate its features and usage. (Shawn)
+Trino Setup: 
+Set up a time with Brock or someone on his team to walk through the Trino setup and its integration with GitLab. (Ryan, Donn)
+GitLab Environment: 
+Set up a call with Jose to discuss and clarify the environment setup and other features in GitLab. (Waseyt)
+Live Data Source: 
+Explore options for obtaining live source data for the Streamlit dashboard to enable real-time bot status monitoring. (Waseyt)
+FedEx Bot Testing: 
+Ask Colin to provide files earlier in the week to facilitate more thorough testing of the FedEx bot. (Donn)
+JIRA Bot Development: 
+Plan out the transition to the new JIRA bot structure, including updating documentation and implementing the new ideas and epics system. (Ryan, Donn)
+Safety Claims Bot: 
+Touch base with Edu to ensure the safety claims bot is back up and running and address any remaining issues. (Ryan)
